@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    './src/**/*.tsx',
-    './index.html'
-  ],
+  content: ['./src/**/*.tsx', './index.html'],
   theme: {
     extend: {
       fontFamily: {
@@ -13,4 +10,3 @@ export default {
   },
   plugins: [],
 }
-

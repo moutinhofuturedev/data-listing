@@ -23,7 +23,7 @@ interface PaginationProps {
 export function Pagination({ items, page, pages }: PaginationProps) {
   const [, setSearchParams] = useSearchParams()
 
-  function firstPage() {
+  const firstPage = () => {
     setSearchParams((params) => {
       params.set('page', '1')
 
@@ -31,7 +31,7 @@ export function Pagination({ items, page, pages }: PaginationProps) {
     })
   }
 
-  function previousPage() {
+  const previousPage = () => {
     if (page - 1 <= 0) {
       return
     }
@@ -43,7 +43,7 @@ export function Pagination({ items, page, pages }: PaginationProps) {
     })
   }
 
-  function nextPage() {
+  const nextPage = () => {
     if (page + 1 > pages) {
       return
     }
@@ -55,7 +55,7 @@ export function Pagination({ items, page, pages }: PaginationProps) {
     })
   }
 
-  function lastPage() {
+  const lastPage = () => {
     setSearchParams((params) => {
       params.set('page', String(pages))
 
