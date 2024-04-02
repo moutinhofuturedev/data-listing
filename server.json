@@ -1,0 +1,196 @@
+{
+    "tags": [
+        {
+            "title": "JavaScript",
+            "amountVideos": 500
+        },
+        {
+            "title": "Python",
+            "amountVideos": 400
+        },
+        {
+            "title": "Java",
+            "amountVideos": 300
+        },
+        {
+            "title": "C++",
+            "amountVideos": 200
+        },
+        {
+            "title": "HTML/CSS",
+            "amountVideos": 250
+        },
+        {
+            "title": "React",
+            "amountVideos": 350
+        },
+        {
+            "title": "Node.js",
+            "amountVideos": 320
+        },
+        {
+            "title": "Angular",
+            "amountVideos": 280
+        },
+        {
+            "title": "C#",
+            "amountVideos": 270
+        },
+        {
+            "title": "Ruby",
+            "amountVideos": 230
+        },
+        {
+            "title": "Swift",
+            "amountVideos": 180
+        },
+        {
+            "title": "PHP",
+            "amountVideos": 210
+        },
+        {
+            "title": "Kotlin",
+            "amountVideos": 190
+        },
+        {
+            "title": "Rust",
+            "amountVideos": 150
+        },
+        {
+            "title": "Vue.js",
+            "amountVideos": 270
+        },
+        {
+            "title": "Django",
+            "amountVideos": 220
+        },
+        {
+            "title": "Spring Boot",
+            "amountVideos": 280
+        },
+        {
+            "title": "TypeScript",
+            "amountVideos": 300
+        },
+        {
+            "title": "SQL",
+            "amountVideos": 400
+        },
+        {
+            "title": "MongoDB",
+            "amountVideos": 250
+        },
+        {
+            "title": "Go",
+            "amountVideos": 230
+        },
+        {
+            "title": "Ruby on Rails",
+            "amountVideos": 190
+        },
+        {
+            "title": "Scala",
+            "amountVideos": 160
+        },
+        {
+            "title": "Elixir",
+            "amountVideos": 140
+        },
+        {
+            "title": "Perl",
+            "amountVideos": 120
+        },
+        {
+            "title": "Lua",
+            "amountVideos": 110
+        },
+        {
+            "title": "Assembly",
+            "amountVideos": 100
+        },
+        {
+            "title": "Objective-C",
+            "amountVideos": 90
+        },
+        {
+            "title": "Dart",
+            "amountVideos": 80
+        },
+        {
+            "title": "Haskell",
+            "amountVideos": 70
+        },
+        {
+            "title": "R",
+            "amountVideos": 60
+        },
+        {
+            "title": "F#",
+            "amountVideos": 50
+        },
+        {
+            "title": "Clojure",
+            "amountVideos": 40
+        },
+        {
+            "title": "Julia",
+            "amountVideos": 30
+        },
+        {
+            "title": "Lisp",
+            "amountVideos": 20
+        },
+        {
+            "title": "COBOL",
+            "amountVideos": 10
+        },
+        {
+            "title": "Fortran",
+            "amountVideos": 5
+        },
+        {
+            "title": "Ada",
+            "amountVideos": 5
+        },
+        {
+            "title": "PL/SQL",
+            "amountVideos": 15
+        },
+        {
+            "title": "VB.NET",
+            "amountVideos": 25
+        },
+        {
+            "title": "Objective-C",
+            "amountVideos": 35
+        },
+        {
+            "title": "VBScript",
+            "amountVideos": 45
+        },
+        {
+            "title": "ActionScript",
+            "amountVideos": 55
+        },
+        {
+            "title": "COBOL",
+            "amountVideos": 65
+        },
+        {
+            "title": "Dart",
+            "amountVideos": 75
+        },
+        {
+            "title": "Delphi",
+            "amountVideos": 85
+        },
+        {
+            "title": "Erlang",
+            "amountVideos": 95
+        },
+        {
+            "title": "Groovy",
+            "amountVideos": 105
+        }
+    ]
+}
