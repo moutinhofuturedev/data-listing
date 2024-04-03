@@ -1,5 +1,5 @@
 import { keepPreviousData, useQuery } from '@tanstack/react-query'
-import { FileDown, MoreHorizontal, Plus, Search } from 'lucide-react'
+import { FileDown, Filter, MoreHorizontal, Plus, Search } from 'lucide-react'
 import { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 
@@ -17,21 +17,20 @@ import {
   TableHeader,
   TableRow,
 } from './components/ui/table'
-import useDebounce from './hook/use-debounce'
 import { TagResponse } from './types'
 
 export const App = () => {
-  const [filter, setFilter] = useState('')
-  const [serchParams] = useSearchParams()
-
-  const debouncedFilter = useDebounce(filter, 1000)
+  const [serchParams, setSearchParams] = useSearchParams()
   const page = serchParams.get('page') ? Number(serchParams.get('page')) : 1
+  const urlFilter = serchParams.get('filter') ?? ''
+
+  const [filter, setFilter] = useState(urlFilter)
 
   const { data: tagsResponse, isLoading } = useQuery<TagResponse>({
-    queryKey: ['get-tags', debouncedFilter, page],
+    queryKey: ['get-tags', urlFilter, page],
     queryFn: async () => {
       const response = await fetch(
-        `http://localhost:3000/tags?_page=${page}&_per_page=10&title=${debouncedFilter}`,
+        `http://localhost:3000/tags?_page=${page}&_per_page=10&title=${urlFilter}`,
       )
       const data: TagResponse = await response.json()
 
@@ -39,9 +38,18 @@ export const App = () => {
 
       return data
     },
-    placeholderData: keepPreviousData,
-    staleTime: Infinity,
+    placeholderData: keepPreviousData, // evitar que a página pisque ao fazer requisição
+    staleTime: 1000 * 60 * 5, // a cada 5 minutos recarregar os dados da pagina e zerar o cache
   })
+
+  const handleFilter = () => {
+    setSearchParams((params) => {
+      params.set('page', '1')
+      params.set('filter', filter)
+
+      return params
+    })
+  }
 
   if (isLoading) {
     return null
@@ -63,14 +71,20 @@ export const App = () => {
         </div>
 
         <div className="flex items-center justify-between">
-          <Input variant="filter">
-            <Search className="size-3" />
-            <Control
-              placeholder="Search tags..."
-              onChange={(event) => setFilter(event.target.value)}
-              value={filter}
-            />
-          </Input>
+          <div className="flex items-center gap-3">
+            <Input variant="filter">
+              <Search className="size-3" />
+              <Control
+                placeholder="Search tags..."
+                onChange={(event) => setFilter(event.target.value)}
+                value={filter}
+              />
+            </Input>
+            <Button variant="primary" onClick={handleFilter}>
+              <Filter className="size-3" />
+              Filter
+            </Button>
+          </div>
           <Button>
             <FileDown className="size-3" />
             Export
