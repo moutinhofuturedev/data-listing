@@ -38,8 +38,11 @@ export const App = () => {
 
       return data
     },
-    placeholderData: keepPreviousData, // evitar que a página pisque ao fazer requisição
-    staleTime: 1000 * 60 * 5, // a cada 5 minutos recarregar os dados da pagina e zerar o cache
+    placeholderData: keepPreviousData, // evitar que a página pisque ao fazer requisições
+    staleTime: 1000 * 60 * 5,
+    /* 1000 x 60 x 5 calcula o tempo em milissegundos, equivalente a 5 minutos. Portanto, após 5 minutos desde a última busca bem-sucedida
+    os dados serão considerados obsoletos, e o React Query tentará buscar os dados mais recentes
+    */
   })
 
   const handleFilter = () => {
