@@ -17,6 +17,7 @@ import {
   TableHeader,
   TableRow,
 } from './components/ui/table'
+import { env } from './env'
 import { TagResponse } from './types'
 
 export const App = () => {
@@ -30,7 +31,7 @@ export const App = () => {
     queryKey: ['get-tags', urlFilter, page],
     queryFn: async () => {
       const response = await fetch(
-        `http://localhost:3000/tags?_page=${page}&_per_page=10&title=${urlFilter}`,
+        `${env.VITE_API_URL}/tags?_page=${page}&_per_page=10&title=${urlFilter}`,
       )
       const data: TagResponse = await response.json()
 
