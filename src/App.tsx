@@ -2,6 +2,7 @@ import { keepPreviousData, useQuery } from '@tanstack/react-query'
 import { FileDown, Filter, MoreHorizontal, Search } from 'lucide-react'
 import { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
+import { toast } from 'sonner'
 
 import { Header } from '@/components/header'
 import { Pagination } from '@/components/pagination'
@@ -31,11 +32,21 @@ export const App = () => {
   const { data: tagsResponse, isLoading } = useQuery<TagResponse>({
     queryKey: ['get-tags', urlFilter, page],
     queryFn: async () => {
-      const response = await api.get(
-        `/tags?_page=${page}&_per_page=10&title=${urlFilter}`,
-      )
+      try {
+        const response = await api.get(
+          `/tags?_page=${page}&_per_page=10&title=${urlFilter}`,
+        )
 
-      return response.data
+        return response.data
+      } catch {
+        toast.error('Failed to fetch tags', {
+          style: {
+            background: '#2dd4bf',
+            color: '#042f2e',
+            borderColor: '#042f2e',
+          },
+        })
+      }
     },
     placeholderData: keepPreviousData, // evitar que a página pisque ao fazer requisições
     staleTime: 1000 * 60 * 5,
