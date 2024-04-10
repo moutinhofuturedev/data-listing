@@ -18,9 +18,8 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
+import { api } from '@/libs/axios'
 
-// import { env } from './env'
-import { api } from './libs/axios'
 import { TagResponse } from './types'
 
 export const App = () => {
@@ -36,11 +35,8 @@ export const App = () => {
       const response = await api.get(
         `/tags?_page=${page}&_per_page=10&title=${urlFilter}`,
       )
-      const data: TagResponse = await response.data
 
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-
-      return data
+      return response.data
     },
     placeholderData: keepPreviousData, // evitar que a página pisque ao fazer requisições
     staleTime: 1000 * 60 * 5,
