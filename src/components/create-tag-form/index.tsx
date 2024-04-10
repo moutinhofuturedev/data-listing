@@ -4,7 +4,9 @@ import { Check, X } from 'lucide-react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
-import { Button } from '../ui/button'
+import { Button } from '@/components/ui/button'
+
+import { getSlugFromString } from './rules/get-slug-from-string'
 
 const createTagSchema = z.object({
   name: z.string().min(3, { message: 'Name must be at least 3 characters' }),
@@ -24,17 +26,7 @@ export const CreateTagForm = () => {
     reset()
   }
 
-  const getSlugFromString = (string: string): string => {
-    return string
-      .normalize('NFD')
-      .toLowerCase()
-      .trim()
-      .replace(/[^\w\s-]/g, '')
-      .replace(/[\s_-]+/g, '-')
-      .replace(/^-+|-+$/g, '')
-  }
-
-  const slug = watch('name') ? getSlugFromString(watch('name')) : ''
+  const slug = watch('name') ? getSlugFromString.execute(watch('name')) : ''
 
   return (
     <form onSubmit={handleSubmit(createTag)} className="w-full space-y-6">

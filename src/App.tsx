@@ -19,7 +19,8 @@ import {
   TableRow,
 } from '@/components/ui/table'
 
-import { env } from './env'
+// import { env } from './env'
+import { api } from './libs/axios'
 import { TagResponse } from './types'
 
 export const App = () => {
@@ -32,10 +33,10 @@ export const App = () => {
   const { data: tagsResponse, isLoading } = useQuery<TagResponse>({
     queryKey: ['get-tags', urlFilter, page],
     queryFn: async () => {
-      const response = await fetch(
-        `${env.VITE_API_URL}/tags?_page=${page}&_per_page=10&title=${urlFilter}`,
+      const response = await api.get(
+        `/tags?_page=${page}&_per_page=10&title=${urlFilter}`,
       )
-      const data: TagResponse = await response.json()
+      const data: TagResponse = await response.data
 
       await new Promise((resolve) => setTimeout(resolve, 1000))
 
