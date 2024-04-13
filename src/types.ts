@@ -1,6 +1,7 @@
 interface Tag {
   title: string
   amountVideos: number
+  slug: string
   id: string
 }
 

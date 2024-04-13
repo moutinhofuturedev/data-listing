@@ -49,8 +49,8 @@ export const App = () => {
       }
     },
     placeholderData: keepPreviousData, // evitar que a página pisque ao fazer requisições
-    staleTime: 1000 * 60 * 5,
-    /* 1000 x 60 x 5 calcula o tempo em milissegundos, equivalente a 5 minutos. Portanto, após 5 minutos desde a última busca bem-sucedida
+    staleTime: 1000 * 60 * 2,
+    /* 1000 x 60 x 2 calcula o tempo em milissegundos, equivalente a 2 minutos. Portanto, após 5 minutos desde a última busca bem-sucedida
     os dados serão considerados obsoletos, e o React Query tentará buscar os dados mais recentes
     */
   })
@@ -118,7 +118,7 @@ export const App = () => {
                   <TableCell>
                     <div className="flex flex-col gap-0.5">
                       <span className="font-medium">{tags.title}</span>
-                      <span className="text-xs text-zinc-500">{tags.id}</span>
+                      <span className="text-xs text-zinc-500">{tags.slug}</span>
                     </div>
                   </TableCell>
                   <TableCell className="text-zinc-300">

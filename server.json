@@ -1,196 +1,298 @@
 {
-    "tags": [
-        {
-            "title": "JavaScript",
-            "amountVideos": 500
-        },
-        {
-            "title": "Python",
-            "amountVideos": 400
-        },
-        {
-            "title": "Java",
-            "amountVideos": 300
-        },
-        {
-            "title": "C++",
-            "amountVideos": 200
-        },
-        {
-            "title": "HTML/CSS",
-            "amountVideos": 250
-        },
-        {
-            "title": "React",
-            "amountVideos": 350
-        },
-        {
-            "title": "Node.js",
-            "amountVideos": 320
-        },
-        {
-            "title": "Angular",
-            "amountVideos": 280
-        },
-        {
-            "title": "C#",
-            "amountVideos": 270
-        },
-        {
-            "title": "Ruby",
-            "amountVideos": 230
-        },
-        {
-            "title": "Swift",
-            "amountVideos": 180
-        },
-        {
-            "title": "PHP",
-            "amountVideos": 210
-        },
-        {
-            "title": "Kotlin",
-            "amountVideos": 190
-        },
-        {
-            "title": "Rust",
-            "amountVideos": 150
-        },
-        {
-            "title": "Vue.js",
-            "amountVideos": 270
-        },
-        {
-            "title": "Django",
-            "amountVideos": 220
-        },
-        {
-            "title": "Spring Boot",
-            "amountVideos": 280
-        },
-        {
-            "title": "TypeScript",
-            "amountVideos": 300
-        },
-        {
-            "title": "SQL",
-            "amountVideos": 400
-        },
-        {
-            "title": "MongoDB",
-            "amountVideos": 250
-        },
-        {
-            "title": "Go",
-            "amountVideos": 230
-        },
-        {
-            "title": "Ruby on Rails",
-            "amountVideos": 190
-        },
-        {
-            "title": "Scala",
-            "amountVideos": 160
-        },
-        {
-            "title": "Elixir",
-            "amountVideos": 140
-        },
-        {
-            "title": "Perl",
-            "amountVideos": 120
-        },
-        {
-            "title": "Lua",
-            "amountVideos": 110
-        },
-        {
-            "title": "Assembly",
-            "amountVideos": 100
-        },
-        {
-            "title": "Objective-C",
-            "amountVideos": 90
-        },
-        {
-            "title": "Dart",
-            "amountVideos": 80
-        },
-        {
-            "title": "Haskell",
-            "amountVideos": 70
-        },
-        {
-            "title": "R",
-            "amountVideos": 60
-        },
-        {
-            "title": "F#",
-            "amountVideos": 50
-        },
-        {
-            "title": "Clojure",
-            "amountVideos": 40
-        },
-        {
-            "title": "Julia",
-            "amountVideos": 30
-        },
-        {
-            "title": "Lisp",
-            "amountVideos": 20
-        },
-        {
-            "title": "COBOL",
-            "amountVideos": 10
-        },
-        {
-            "title": "Fortran",
-            "amountVideos": 5
-        },
-        {
-            "title": "Ada",
-            "amountVideos": 5
-        },
-        {
-            "title": "PL/SQL",
-            "amountVideos": 15
-        },
-        {
-            "title": "VB.NET",
-            "amountVideos": 25
-        },
-        {
-            "title": "Objective-C",
-            "amountVideos": 35
-        },
-        {
-            "title": "VBScript",
-            "amountVideos": 45
-        },
-        {
-            "title": "ActionScript",
-            "amountVideos": 55
-        },
-        {
-            "title": "COBOL",
-            "amountVideos": 65
-        },
-        {
-            "title": "Dart",
-            "amountVideos": 75
-        },
-        {
-            "title": "Delphi",
-            "amountVideos": 85
-        },
-        {
-            "title": "Erlang",
-            "amountVideos": 95
-        },
-        {
-            "title": "Groovy",
-            "amountVideos": 105
-        }
-    ]
+  "tags": [
+    {
+      "title": "JavaScript",
+      "amountVideos": 500,
+      "slug": "old",
+      "id": "77c4"
+    },
+    {
+      "title": "Python",
+      "amountVideos": 400,
+      "slug": "old",
+      "id": "25cf"
+    },
+    {
+      "title": "Java",
+      "amountVideos": 300,
+      "slug": "old",
+      "id": "503d"
+    },
+    {
+      "title": "C++",
+      "amountVideos": 200,
+      "slug": "old",
+      "id": "cdc3"
+    },
+    {
+      "title": "HTML/CSS",
+      "amountVideos": 250,
+      "slug": "old",
+      "id": "4178"
+    },
+    {
+      "title": "React",
+      "amountVideos": 350,
+      "slug": "old",
+      "id": "9b2e"
+    },
+    {
+      "title": "Node.js",
+      "amountVideos": 320,
+      "slug": "old",
+      "id": "0f13"
+    },
+    {
+      "title": "Angular",
+      "amountVideos": 280,
+      "slug": "old",
+      "id": "d9d5"
+    },
+    {
+      "title": "C#",
+      "amountVideos": 270,
+      "slug": "old",
+      "id": "35b7"
+    },
+    {
+      "title": "Ruby",
+      "amountVideos": 230,
+      "slug": "old",
+      "id": "e8f4"
+    },
+    {
+      "title": "Swift",
+      "amountVideos": 180,
+      "slug": "old",
+      "id": "03eb"
+    },
+    {
+      "title": "PHP",
+      "amountVideos": 210,
+      "slug": "old",
+      "id": "0cf1"
+    },
+    {
+      "title": "Kotlin",
+      "amountVideos": 190,
+      "slug": "old",
+      "id": "8ee6"
+    },
+    {
+      "title": "Rust",
+      "amountVideos": 150,
+      "slug": "old",
+      "id": "f510"
+    },
+    {
+      "title": "Vue.js",
+      "amountVideos": 270,
+      "slug": "old",
+      "id": "2ba2"
+    },
+    {
+      "title": "Django",
+      "amountVideos": 220,
+      "slug": "old",
+      "id": "a273"
+    },
+    {
+      "title": "Spring Boot",
+      "amountVideos": 280,
+      "slug": "old",
+      "id": "e7d5"
+    },
+    {
+      "title": "TypeScript",
+      "amountVideos": 300,
+      "slug": "old",
+      "id": "2063"
+    },
+    {
+      "title": "SQL",
+      "amountVideos": 400,
+      "slug": "old",
+      "id": "0005"
+    },
+    {
+      "title": "MongoDB",
+      "amountVideos": 250,
+      "slug": "old",
+      "id": "2b38"
+    },
+    {
+      "title": "Go",
+      "amountVideos": 230,
+      "slug": "old",
+      "id": "416b"
+    },
+    {
+      "title": "Ruby on Rails",
+      "amountVideos": 190,
+      "slug": "old",
+      "id": "00ed"
+    },
+    {
+      "title": "Scala",
+      "amountVideos": 160,
+      "slug": "old",
+      "id": "e148"
+    },
+    {
+      "title": "Elixir",
+      "amountVideos": 140,
+      "slug": "old",
+      "id": "c984"
+    },
+    {
+      "title": "Perl",
+      "amountVideos": 120,
+      "slug": "old",
+      "id": "fd4c"
+    },
+    {
+      "title": "Lua",
+      "amountVideos": 110,
+      "slug": "old",
+      "id": "666b"
+    },
+    {
+      "title": "Assembly",
+      "amountVideos": 100,
+      "slug": "old",
+      "id": "0dd4"
+    },
+    {
+      "title": "Objective-C",
+      "amountVideos": 90,
+      "slug": "old",
+      "id": "84cc"
+    },
+    {
+      "title": "Dart",
+      "amountVideos": 80,
+      "slug": "old",
+      "id": "d8f8"
+    },
+    {
+      "title": "Haskell",
+      "amountVideos": 70,
+      "slug": "old",
+      "id": "2132"
+    },
+    {
+      "title": "R",
+      "amountVideos": 60,
+      "slug": "old",
+      "id": "c06a"
+    },
+    {
+      "title": "F#",
+      "amountVideos": 50,
+      "slug": "old",
+      "id": "615b"
+    },
+    {
+      "title": "Clojure",
+      "amountVideos": 40,
+      "slug": "old",
+      "id": "e656"
+    },
+    {
+      "title": "Julia",
+      "amountVideos": 30,
+      "slug": "old",
+      "id": "2c2b"
+    },
+    {
+      "title": "Lisp",
+      "amountVideos": 20,
+      "slug": "old",
+      "id": "3df1"
+    },
+    {
+      "title": "COBOL",
+      "amountVideos": 10,
+      "slug": "old",
+      "id": "cbfa"
+    },
+    {
+      "title": "Fortran",
+      "amountVideos": 5,
+      "slug": "old",
+      "id": "ea21"
+    },
+    {
+      "title": "Ada",
+      "amountVideos": 5,
+      "slug": "old",
+      "id": "fa9e"
+    },
+    {
+      "title": "PL/SQL",
+      "amountVideos": 15,
+      "slug": "old",
+      "id": "3eef"
+    },
+    {
+      "title": "VB.NET",
+      "amountVideos": 25,
+      "slug": "old",
+      "id": "84e1"
+    },
+    {
+      "title": "Objective-C",
+      "amountVideos": 35,
+      "slug": "old",
+      "id": "2fc6"
+    },
+    {
+      "title": "VBScript",
+      "amountVideos": 45,
+      "slug": "old",
+      "id": "84be"
+    },
+    {
+      "title": "ActionScript",
+      "amountVideos": 55,
+      "slug": "old",
+      "id": "5213"
+    },
+    {
+      "title": "COBOL",
+      "amountVideos": 65,
+      "slug": "old",
+      "id": "8e23"
+    },
+    {
+      "title": "Dart",
+      "amountVideos": 75,
+      "slug": "old",
+      "id": "d19d"
+    },
+    {
+      "title": "Delphi",
+      "amountVideos": 85,
+      "slug": "old",
+      "id": "5d60"
+    },
+    {
+      "title": "Erlang",
+      "amountVideos": 95,
+      "slug": "old",
+      "id": "4c5d"
+    },
+    {
+      "title": "Groovy",
+      "amountVideos": 105,
+      "slug": "old",
+      "id": "851d"
+    },
+    {
+      "id": "3da7",
+      "title": "MyScript",
+      "slug": "myscript",
+      "amountVideos": 0
+    }
+  ]
 }
