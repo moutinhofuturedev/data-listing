@@ -13,6 +13,9 @@ import { getSlugFromString } from './rules/get-slug-from-string'
 
 const createTagSchema = z.object({
   title: z.string().min(3, { message: 'Name must be at least 3 characters' }),
+  amountVideos: z
+    .string()
+    .min(1, { message: 'Amount must be at least 1 number' }),
 })
 
 type CreateTagFormData = z.infer<typeof createTagSchema>
@@ -32,13 +35,13 @@ export const CreateTagForm = () => {
   const slug = watch('title') ? getSlugFromString.execute(watch('title')) : ''
 
   const { mutateAsync } = useMutation({
-    mutationFn: async ({ title }: CreateTagFormData) => {
+    mutationFn: async ({ title, amountVideos }: CreateTagFormData) => {
       try {
         await new Promise((resolve) => setTimeout(resolve, 2000))
         const postTag = await api.post('/tags', {
           title,
           slug,
-          amountVideos: 0,
+          amountVideos: Number(amountVideos),
         })
 
         toast.success('Tag created!', {
@@ -71,8 +74,8 @@ export const CreateTagForm = () => {
     },
   })
 
-  const createNewTag = async ({ title }: CreateTagFormData) => {
-    const postTag = await mutateAsync({ title })
+  const createNewTag = async ({ title, amountVideos }: CreateTagFormData) => {
+    const postTag = await mutateAsync({ title, amountVideos })
 
     return postTag
   }
@@ -106,6 +109,21 @@ export const CreateTagForm = () => {
           value={slug}
           readOnly
         />
+      </div>
+
+      <div className="space-y-2">
+        <label className="block text-sm font-medium" htmlFor="amountVideos">
+          Number of videos
+        </label>
+        <input
+          className="h-10 w-full rounded-lg border border-zinc-800 bg-zinc-800/50 px-3 py-2 text-sm"
+          type="text"
+          id="amountVideos"
+          {...register('amountVideos')}
+        />
+        {errors.amountVideos && (
+          <p className="text-sm text-red-500">{errors.amountVideos.message}</p>
+        )}
       </div>
 
       <div className="flex items-center justify-end gap-2">
