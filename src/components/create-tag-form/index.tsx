@@ -33,19 +33,34 @@ export const CreateTagForm = () => {
 
   const { mutateAsync } = useMutation({
     mutationFn: async ({ title }: CreateTagFormData) => {
-      await new Promise((resolve) => setTimeout(resolve, 2000))
-      const postTag = await api.post('/tags', { title, slug, amountVideos: 0 })
+      try {
+        await new Promise((resolve) => setTimeout(resolve, 2000))
+        const postTag = await api.post('/tags', {
+          title,
+          slug,
+          amountVideos: 0,
+        })
 
-      toast.success('Tag created!', {
-        style: {
-          background: '#2dd4bf',
-          color: '#042f2e',
-          borderColor: '#042f2e',
-        },
-      })
+        toast.success('Tag created!', {
+          style: {
+            background: '#2dd4bf',
+            color: '#042f2e',
+            borderColor: '#042f2e',
+          },
+        })
 
-      reset()
-      return postTag
+        reset()
+        return postTag
+      } catch {
+        toast.error('Failed to create tag', {
+          position: 'bottom-left',
+          style: {
+            background: '#2dd4bf',
+            color: '#042f2e',
+            borderColor: '#042f2e',
+          },
+        })
+      }
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['get-tags'] })
