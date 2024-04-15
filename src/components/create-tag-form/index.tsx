@@ -1,5 +1,6 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as Dialog from '@radix-ui/react-dialog'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { Check, Loader2, X } from 'lucide-react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
@@ -17,6 +18,7 @@ const createTagSchema = z.object({
 type CreateTagFormData = z.infer<typeof createTagSchema>
 
 export const CreateTagForm = () => {
+  const queryClient = useQueryClient()
   const {
     register,
     handleSubmit,
@@ -29,24 +31,39 @@ export const CreateTagForm = () => {
 
   const slug = watch('title') ? getSlugFromString.execute(watch('title')) : ''
 
-  const createTag = async ({ title }: CreateTagFormData) => {
-    await new Promise((resolve) => setTimeout(resolve, 2000))
-    const postTag = await api.post('/tags', { title, slug, amountVideos: 0 })
+  const { mutateAsync } = useMutation({
+    mutationFn: async ({ title }: CreateTagFormData) => {
+      await new Promise((resolve) => setTimeout(resolve, 2000))
+      const postTag = await api.post('/tags', { title, slug, amountVideos: 0 })
 
-    toast.success('Tag created!', {
-      style: {
-        background: '#2dd4bf',
-        color: '#042f2e',
-        borderColor: '#042f2e',
-      },
-    })
+      toast.success('Tag created!', {
+        style: {
+          background: '#2dd4bf',
+          color: '#042f2e',
+          borderColor: '#042f2e',
+        },
+      })
 
-    reset()
+      reset()
+      return postTag
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['get-tags'] })
+      /* Este trecho de código define uma função onSuccess que invalida a consulta 'get-tags' no objeto queryClient. 
+      Isso significa que a consulta 'get-tags' será invalidada automaticamente após o sucesso da requisição,
+      e o React Query tentará buscar os dados mais recentes.
+      */
+    },
+  })
+
+  const createNewTag = async ({ title }: CreateTagFormData) => {
+    const postTag = await mutateAsync({ title })
+
     return postTag
   }
 
   return (
-    <form onSubmit={handleSubmit(createTag)} className="w-full space-y-6">
+    <form onSubmit={handleSubmit(createNewTag)} className="w-full space-y-6">
       <div className="space-y-2">
         <label className="block text-sm font-medium" htmlFor="name">
           Tag name
