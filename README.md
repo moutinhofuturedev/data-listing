@@ -20,7 +20,12 @@ Step 2 - Rode o projeto
 npm run dev
 ```
 
-Step 3 - Rode a api fake (json server)
+Step 3 - Crie um arquvio .env.local na raiz do projeto e cole a variável de ambiente abaixo
+```bash
+VITE_API_URL=http://localhost:3000
+```
+
+Step 4 - Rode a api fake (json server)
 ```bash
 npm run server
 ```
